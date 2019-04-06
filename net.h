@@ -1,9 +1,9 @@
-
-#include <winsock2.h>
 #include <stdio.h>
+#include <winsock2.h>
 
-int createSocket();
-void deleteSocket();
-int connectServer( char *, short );
-int get_socket();
-unsigned char is_connected();
+#pragma comment(lib, "ws2_32.lib")
+
+SOCKET createSocket(char *server, char *port);
+void deleteSocket(SOCKET socket);
+int connectServer(SOCKET socket, char *, char * );
+unsigned char is_connected(void);
